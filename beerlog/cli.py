@@ -32,6 +32,7 @@ def list(style: Optional[str] = None):
     for header in headers:
         table.add_column(header, style="magenta")
     for beer in beers:
+        beer.date = beer.date.strftime("%Y-%m-%d")
         values = [str(getattr(beer, header)) for header in headers]
         table.add_row(*values)
     console.print(table)
