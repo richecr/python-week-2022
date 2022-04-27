@@ -28,7 +28,7 @@ def list(style: Optional[str] = None):
     """Lists beers in database."""
     beers = core.get_beers_from_database()
     table = Table(title="Beerlog :beer_mug:")
-    headers = ['id', 'name', 'style', 'rate', 'date']
+    headers = ['id', 'name', 'style', 'flavor', 'image', 'cost', 'rate', 'date']
     for header in headers:
         table.add_column(header, style="magenta")
     for beer in beers:
